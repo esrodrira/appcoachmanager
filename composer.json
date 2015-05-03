@@ -1,5 +1,5 @@
 {
-    "name": "appcoachmanager",
+    "name": "appcoachmanager/appcoachmanager",
     "license": "MIT",
     "type": "project",
     "description": "Manage matches.",
