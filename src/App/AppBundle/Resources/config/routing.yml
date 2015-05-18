@@ -1,3 +1,13 @@
 app_app_homepage:
     path:     /hello/{name}
     defaults: { _controller: AppAppBundle:Default:index }
+
+recipes_id:
+    path:     /recipes/{id}
+    defaults: { _controller: AppAppBundle:Recipes:getbyid }
+    requirements:
+        id: \d+
+
+recipes_name:
+    path:     /recipes/{recipe_name}
+    defaults: { _controller: AppAppBundle:Recipes:getbyname }
