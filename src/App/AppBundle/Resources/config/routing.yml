@@ -8,6 +8,6 @@ recipes_id:
     requirements:
         id: \d+
 
-recipes_name:
-    path:     /recipes/{recipe_name}
-    defaults: { _controller: AppAppBundle:Recipes:getbyname }
+recipes_create:
+    path: /recipes/create
+    defaults: { _controller: AppAppBundle:Recipes:create}

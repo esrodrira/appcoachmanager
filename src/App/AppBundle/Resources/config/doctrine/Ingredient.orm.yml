@@ -1,0 +1,15 @@
+App\AppBundle\Entity\Ingredient:
+    type: entity
+    table: null
+    repositoryClass: App\AppBundle\Entity\IngredientRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

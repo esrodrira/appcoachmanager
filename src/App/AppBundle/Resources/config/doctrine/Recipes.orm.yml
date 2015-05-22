@@ -1,0 +1,40 @@
+App\AppBundle\Entity\Recipes:
+    type: entity
+    table: Recipes
+    repositoryClass: App\AppBundle\Entity\RecipesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        difficulty:
+            type: string
+            length: '40'
+        description:
+            type: text
+    lifecycleCallbacks: {  }
+    manyToOne:
+        author:
+            targetEntity:   Author
+            cascade: ['persist']
+            joinColumn:
+                onDelete: CASCADE
+                name:   author_id
+                referencedColumnName:   id
+    manyToMany:
+        ingredients:
+            cascade: ['persist']
+            targetEntity:   Ingredient
+            joinTable:
+                name: recipe_ingredients
+                joinColumns:
+                    recipe_id:
+                        referencedColumnName:   id
+                inverseJoinColumns:
+                    ingredient_id:
+                        referencedColumnName: id

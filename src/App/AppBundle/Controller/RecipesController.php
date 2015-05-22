@@ -4,6 +4,9 @@ namespace App\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use App\AppBundle\Entity\Author;
+use App\AppBundle\Entity\Ingredient;
+use App\AppBundle\Entity\Recipes;
 
 class RecipesController extends Controller
 {
@@ -12,9 +15,20 @@ class RecipesController extends Controller
     {
     	return new Response($id);
     }
-   
-    public function getbynameAction($recipe_name)
+
+    public function createAction()
     {
-    	return new Response($recipe_name);
+    	$author = new Author('Karlos', 'Arguiñano');
+    	$ingredient = new Ingredient('chocolate');
+    	$recipes = new Recipes($author,'CupCake','Medium','Dulce');
+		$recipes->add($ingredient);
+		
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$em->persist($recipes);
+    	
+
+    	$em->flush();
+
+        return $this->render('AppAppBundle:Recipes:recipe_show.html.twig', array('name_recipe' => $recipes->getName()));
     }
 }
