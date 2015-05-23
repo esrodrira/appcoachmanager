@@ -41,6 +41,7 @@ class Recipes
         $this->difficulty = $difficulty;
         $this->description = $description;
         $this->ingredients = new ArrayCollection();
+
     }
 
     public function add(Ingredient $ingredient)

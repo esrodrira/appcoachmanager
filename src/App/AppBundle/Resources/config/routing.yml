@@ -11,3 +11,9 @@ recipes_id:
 recipes_create:
     path: /recipes/create
     defaults: { _controller: AppAppBundle:Recipes:create}
+
+recipes_show:
+    path: /recipes/show/{id}
+    defaults: { _controller: AppAppBundle:Recipes:show}
+    requirements:
+        id: \d+
