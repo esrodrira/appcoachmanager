@@ -127,4 +127,60 @@ class Recipes
     {
         return $this->description;
     }
+
+    /**
+     * Set author
+     *
+     * @param \App\AppBundle\Entity\Author $author
+     * @return Recipes
+     */
+    public function setAuthor(\App\AppBundle\Entity\Author $author = null)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \App\AppBundle\Entity\Author 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Add ingredients
+     *
+     * @param \App\AppBundle\Entity\Ingredient $ingredients
+     * @return Recipes
+     */
+    public function addIngredient(\App\AppBundle\Entity\Ingredient $ingredients)
+    {
+        $this->ingredients[] = $ingredients;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingredients
+     *
+     * @param \App\AppBundle\Entity\Ingredient $ingredients
+     */
+    public function removeIngredient(\App\AppBundle\Entity\Ingredient $ingredients)
+    {
+        $this->ingredients->removeElement($ingredients);
+    }
+
+    /**
+     * Get ingredients
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
 }

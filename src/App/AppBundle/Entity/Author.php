@@ -24,6 +24,8 @@ class Author
      */
     private $surname;
 
+    private $years;
+
     public function __construct($name, $surname)
     {
         $this->name = $name;
@@ -85,5 +87,56 @@ class Author
     public function getSurname()
     {
         return $this->surname;
+    }
+
+    /**
+     * Set years
+     *
+     * @param integer $years
+     * @return Author
+     */
+    public function setYears($years)
+    {
+        $this->years = $years;
+
+        return $this;
+    }
+
+    /**
+     * Get years
+     *
+     * @return integer 
+     */
+    public function getYears()
+    {
+        return $this->years;
+    }
+    /**
+     * @var integer
+     */
+    private $prueba;
+
+
+    /**
+     * Set prueba
+     *
+     * @param integer $prueba
+     * @return Author
+     */
+    public function setPrueba($prueba)
+    {
+        $this->prueba = $prueba;
+
+        return $this;
+    }
+
+    /**
+     * Get prueba
+     *
+     * @return integer 
+     */
+    public function getPrueba()
+    {
+        return $this->prueba;
     }
 }

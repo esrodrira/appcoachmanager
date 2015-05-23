@@ -15,4 +15,8 @@ App\AppBundle\Entity\Author:
         surname:
             type: string
             length: 255
+        years:
+            type: integer
+        prueba:
+            type: integer
     lifecycleCallbacks: {  }
