@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de autores</title>
+    </head>
+    <body>
+        <h1>Lista de autores</h1><br/>
+        <a href="{{ url('author_crea_form')}}">Crea nuevo autor<a/>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Edad</td>
+            </tr>
+        {% for author in authors %}
+            <tr>
+                <td>{{author.id}}</td>
+                <td>{{author.name}}</td>
+                <td>{{author.surname}}</td>
+                <td>{{author.years}}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+        <a href="{{ url('recipes_index')}}">Atras<a/>
+    </body>
+</html>

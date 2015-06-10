@@ -1,5 +1,5 @@
 app_app_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: AppAppBundle:Default:index }
 
 recipes_id:
@@ -17,3 +17,23 @@ recipes_show:
     defaults: { _controller: AppAppBundle:Recipes:show}
     requirements:
         id: \d+
+
+recipes_index:
+    path:     /recipes
+    defaults: { _controller: AppAppBundle:Recipes:index }
+
+author_list:
+    path:     /authors
+    defaults: { _controller: AppAppBundle:Author:getAuthors }
+
+author_crea_form:
+    path:     /author/crea
+    defaults: { _controller: AppAppBundle:Author:creaAuthor }
+
+ingredients_list:
+    path:     /ingredients
+    defaults: { _controller: AppAppBundle:Ingredient:getIngredients }
+
+ingredient_crea_form:
+    path:     /ingredient/crea
+    defaults: { _controller: AppAppBundle:Ingredient:creaIngredient }

@@ -19,9 +19,8 @@ class Ingredient
      */
     private $name;
 
-    public function __construct($name)
+    public function __construct()
     {
-        $this->name = $name;
     }
 
 

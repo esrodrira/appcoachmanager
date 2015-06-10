@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de ingredientes</title>
+    </head>
+    <body>
+        <h1>Lista de ingredientes</h1><br/>
+        <a href="{{ url('ingredient_crea_form')}}">Crea nuevo ingrediente<a/>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Nombre</td>
+            </tr>
+        {% for ingredient in ingredients %}
+            <tr>
+                <td>{{ingredient.id}}</td>
+                <td>{{ingredient.name}}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+        <a href="{{ url('recipes_index')}}">Atras<a/>
+    </body>
+</html>

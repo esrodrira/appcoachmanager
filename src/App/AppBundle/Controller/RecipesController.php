@@ -10,26 +10,16 @@ use App\AppBundle\Entity\Recipes;
 
 class RecipesController extends Controller
 {
-    
+    public function indexAction()
+    {
+        return $this->render('AppAppBundle:Recipes:index.html.twig', array(''));
+    }
+
     public function getbyidAction($id)
     {
     	return new Response($id);
     }
-
-    public function createAction()
-    {
-    	$author = new Author('Karlos', 'Arguiñano',45,'pruebas');
-    	$ingredient = new Ingredient('chocolate');
-    	$recipes = new Recipes($author,'CupCake','Medium','Dulce');
-		$recipes->add($ingredient);
-		
-    	$em = $this->getDoctrine()->getEntityManager();
-    	$em->persist($recipes);
-
-    	$em->flush();
-
-        return $this->render('AppAppBundle:Recipes:recipe_create.html.twig', array('name_recipe' => $recipes->getName()));
-    }
+   
 
     public function showAction($id)
     {

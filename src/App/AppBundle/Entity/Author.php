@@ -26,12 +26,10 @@ class Author
 
     private $years;
 
-    public function __construct($name, $surname, $years, $prueba)
+    public function __construct()
     {
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->years = $years;
-        $this->prueba = $prueba;
+        
+        
     }
 
 
